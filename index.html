@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agents, AI Receptionist and Business Automation Services | Clavyra</title>
+  <meta name="description" content="Clavyra builds AI agents, AI receptionists, and business automation systems that help companies worldwide capture more leads, save time, and grow revenue without adding headcount." />
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Clavyra" />
+  <meta property="og:title" content="AI Agents, AI Receptionist and Business Automation Services | Clavyra" />
+  <meta property="og:description" content="Clavyra builds AI agents, AI receptionists, and business automation systems that help companies worldwide capture more leads, save time, and grow revenue without adding headcount." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clavyra.vercel.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Agents, AI Receptionist and Business Automation Services | Clavyra" />
+  <meta name="twitter:description" content="Clavyra builds AI agents, AI receptionists, and business automation systems for companies worldwide." />
+
+  <!-- Favicon: C in green on dark -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a' rx='7'/%3E%3Ctext x='16' y='23' font-family='Arial%2Csans-serif' font-weight='900' font-size='21' fill='%2300ff88' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
+
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <style>
+    /* ─── Reset / Base ─────────────────────────────── */
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg:       #0a0a0a;
+      --card:     #111111;
+      --alt:      #0d0d0d;
+      --border:   rgba(255,255,255,0.07);
+      --green:    #00ff88;
+      --gbg:      rgba(0,255,136,0.08);
+      --gbd:      rgba(0,255,136,0.18);
+      --gglow:    rgba(0,255,136,0.28);
+      --text:     #ffffff;
+      --muted:    #999999;
+      --dim:      #555555;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 16px;
+    }
+
+    /* ─── Typography ────────────────────────────────── */
+    .h1 {
+      font-size: clamp(2.1rem, 5.5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      color: #fff;
+    }
+    .h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.028em;
+      color: #fff;
+    }
+    .h3 { font-size: 1.0625rem; font-weight: 700; line-height: 1.35; color: #fff; }
+    .body-lg { font-size: 1.0625rem; line-height: 1.75; color: var(--muted); }
+    .body-md { font-size: 0.9375rem; line-height: 1.75; color: var(--muted); }
+    .label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green);
+    }
+
+    /* ─── Sections ──────────────────────────────────── */
+    .sec { padding: 96px 0; }
+    .container { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── Buttons ───────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: #0a0a0a;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      padding: 15px 30px;
+      border-radius: 7px;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .22s cubic-bezier(.34,1.56,.64,1),
+                  box-shadow .22s cubic-bezier(.34,1.56,.64,1);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--gglow); }
+    .btn:active { transform: translateY(0); }
+    .btn:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+    .btn-sm { padding: 10px 20px; font-size: 0.8125rem; border-radius: 6px; }
+
+    /* ─── Nav ───────────────────────────────────────── */
+    .nav-link { color: #888; font-size: .875rem; font-weight: 500; transition: color .15s ease; text-decoration: none; }
+    .nav-link:hover { color: #fff; }
+    .nav-link:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; border-radius: 4px; }
+
+    /* ─── Cards ─────────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color .2s ease,
+                  transform .25s cubic-bezier(.34,1.56,.64,1),
+                  box-shadow .25s ease;
+    }
+    .card:hover {
+      border-color: rgba(0,255,136,.22);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.5);
+    }
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color .2s ease;
+    }
+    .service-card:hover { border-color: rgba(0,255,136,.25); }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 24px;
+      text-align: center;
+      transition: border-color .2s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
+    }
+    .stat-card:hover { border-color: rgba(0,255,136,.22); transform: translateY(-3px); }
+
+    /* ─── Icon box ──────────────────────────────────── */
+    .icon-box {
+      width: 48px; height: 48px;
+      background: var(--gbg); border: 1px solid var(--gbd);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ─── Tags ──────────────────────────────────────── */
+    .tag {
+      display: inline-block;
+      background: rgba(0,255,136,.06); border: 1px solid rgba(0,255,136,.14);
+      color: rgba(0,255,136,.8);
+      font-size: 11px; font-weight: 500;
+      padding: 4px 11px; border-radius: 100px;
+    }
+    .pill {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+      color: #aaa; font-size: .875rem; font-weight: 500;
+      padding: 9px 18px; border-radius: 100px;
+      transition: border-color .15s, color .15s, background .15s;
+    }
+    .pill:hover { border-color: rgba(0,255,136,.28); color: var(--green); background: rgba(0,255,136,.05); }
+
+    /* ─── Step circle ───────────────────────────────── */
+    .step-num {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(0,255,136,.1); border: 1px solid rgba(0,255,136,.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8125rem; font-weight: 700; color: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* ─── Proof bar ─────────────────────────────────── */
+    .proof-bar {
+      background: rgba(0,255,136,.03);
+      border-top: 1px solid rgba(0,255,136,.08);
+      border-bottom: 1px solid rgba(0,255,136,.08);
+      padding: 18px 0;
+    }
+
+    /* ─── Flow diagram ──────────────────────────────── */
+    .flow-wrap { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: nowrap; }
+    .flow-box {
+      background: rgba(0,255,136,.06); border: 1px solid rgba(0,255,136,.2);
+      border-radius: 8px; padding: 14px 18px;
+      font-size: .875rem; font-weight: 600; color: #fff;
+      text-align: center; white-space: nowrap; flex-shrink: 0;
+    }
+    .flow-arrow { display: flex; align-items: center; justify-content: center; padding: 0 8px; flex-shrink: 0; }
+    .flow-arrow svg { color: var(--green); }
+
+    /* ─── Founder section ───────────────────────────── */
+    .founder-wrap { display: flex; align-items: flex-start; gap: 56px; }
+    .founder-photo-ring {
+      position: relative;
+      width: 220px; height: 220px; border-radius: 50%;
+      border: 3px solid var(--green);
+      box-shadow: 0 0 0 8px rgba(0,255,136,.08);
+      background: #141414;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .founder-photo-ring img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      border-radius: 50%;
+    }
+    .trust-line { display: flex; align-items: center; gap: 10px; font-size: .9375rem; color: var(--muted); }
+    .trust-line svg { color: var(--green); flex-shrink: 0; }
+
+    /* ─── WhatsApp ──────────────────────────────────── */
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,.45); }
+      55% { box-shadow: 0 0 0 10px rgba(0,255,136,0); }
+    }
+    .wa-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green); color: #0a0a0a;
+      font-size: .875rem; font-weight: 700;
+      padding: 11px 20px; border-radius: 7px;
+      text-decoration: none;
+      animation: wa-pulse 2.4s ease-in-out infinite;
+      transition: transform .2s ease;
+    }
+    .wa-btn:hover { transform: translateY(-1px); }
+    .wa-btn:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+
+    /* ─── FAQ ───────────────────────────────────────── */
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,.07); }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 22px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      color: #fff; font-size: 1rem; font-weight: 600; text-align: left;
+      font-family: 'Inter', system-ui, sans-serif;
+      transition: color .15s;
+    }
+    .faq-q:hover, .faq-q[aria-expanded="true"] { color: var(--green); }
+    .faq-q:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; border-radius: 4px; }
+    .faq-icon {
+      width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(255,255,255,.06);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, transform .2s;
+    }
+    .faq-q[aria-expanded="true"] .faq-icon { background: rgba(0,255,136,.14); transform: rotate(45deg); }
+    .faq-body { overflow: hidden; max-height: 0; opacity: 0; transition: max-height .3s ease, opacity .25s ease; }
+    .faq-body.open { max-height: 400px; opacity: 1; }
+
+    /* ─── Mobile menu ───────────────────────────────── */
+    #mob-menu { overflow: hidden; max-height: 0; opacity: 0; transition: max-height .25s ease, opacity .2s ease; background: rgba(8,8,8,.98); }
+    #mob-menu.open { max-height: 360px; opacity: 1; }
+
+    /* ─── Scroll to top ─────────────────────────────── */
+    #scroll-top {
+      position: fixed; bottom: 24px; right: 24px; z-index: 40;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(0,255,136,.1); border: 1px solid rgba(0,255,136,.3);
+      color: var(--green); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease, background .15s;
+    }
+    #scroll-top.show { opacity: 1; pointer-events: all; }
+    #scroll-top:hover { background: rgba(0,255,136,.18); transform: translateY(-2px); }
+    #scroll-top:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+
+    /* ─── Backgrounds ───────────────────────────────── */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(0,255,136,.07) 0%, transparent 65%),
+        #0a0a0a;
+    }
+    .cta-bg {
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 50%, rgba(0,255,136,.08) 0%, transparent 70%),
+        #111;
+    }
+
+    /* ─── Scrollbar ─────────────────────────────────── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #1f1f1f; border-radius: 4px; }
+
+    /* ─── Mobile responsive ─────────────────────────── */
+    @media (max-width: 767px) {
+      .sec { padding: 72px 0; }
+      .container { padding: 0 20px; }
+
+      /* Buttons full width */
+      .btn { display: block; width: 100%; text-align: center; }
+      .btn-sm { width: auto; display: inline-block; }
+
+      /* Grids collapse */
+      .cards-grid { grid-template-columns: 1fr !important; }
+      .stats-grid { grid-template-columns: 1fr !important; }
+      .steps-grid { grid-template-columns: 1fr !important; }
+
+      /* Founder stacks */
+      .founder-wrap { flex-direction: column; align-items: center; gap: 36px; }
+      .founder-photo-ring { width: 180px; height: 180px; }
+
+      /* Flow diagram goes vertical on mobile */
+      .flow-wrap { flex-direction: column; }
+      .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+      .flow-box { white-space: normal; width: 100%; max-width: 300px; }
+
+      /* Footer stacks */
+      .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+      /* Nav btn stays compact in desktop (hidden on mobile anyway) */
+      .nav-btn-wrap .btn { width: auto; display: inline-block; }
+
+      /* Mobile menu btn full width */
+      #mob-menu .btn { display: block; width: 100%; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .h1 { font-size: 2rem; }
+      .h2 { font-size: 1.625rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV  (green top-border accent line)
+============================================================ -->
+<header id="site-header"
+  style="position:fixed;top:0;left:0;right:0;z-index:50;
+         background:rgba(10,10,10,0.92);
+         backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+         border-top:3px solid var(--green);
+         border-bottom:1px solid rgba(255,255,255,0.06);">
+
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:65px;">
+
+    <!-- Text logo -->
+    <a href="#" aria-label="Clavyra home" style="text-decoration:none;flex-shrink:0;">
+      <span style="font-size:1.375rem;font-weight:800;letter-spacing:-0.035em;line-height:1;">
+        <span style="color:#fff;">Clav</span><span style="color:var(--green);">yra</span>
+      </span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="nav-btn-wrap" style="display:none;" aria-label="Main navigation" id="desk-nav">
+      <a href="#services"   class="nav-link">Services</a>
+      <a href="#how"        class="nav-link">How It Works</a>
+      <a href="#industries" class="nav-link">Industries</a>
+      <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/karanjatiffanny/30min'});return false;"
+         class="btn btn-sm">Book a Call</a>
+    </nav>
+
+    <!-- Hamburger -->
+    <button id="ham-btn" aria-label="Toggle navigation" aria-expanded="false"
+      style="display:flex;flex-direction:column;justify-content:center;gap:5px;
+             width:36px;height:36px;background:none;border:none;cursor:pointer;flex-shrink:0;border-radius:4px;"
+      onfocus="this.style.outline='2px solid #00ff88'" onblur="this.style.outline=''">
+      <span id="hb1" style="display:block;height:1.5px;background:#fff;transition:transform .2s;transform-origin:center;"></span>
+      <span id="hb2" style="display:block;height:1.5px;background:#fff;transition:opacity .2s;"></span>
+      <span id="hb3" style="display:block;height:1.5px;background:#fff;transition:transform .2s;transform-origin:center;"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mob-menu" class="border-t" style="border-color:rgba(255,255,255,.06);">
+    <div class="container" style="padding-top:16px;padding-bottom:20px;display:flex;flex-direction:column;gap:4px;">
+      <a href="#services"   class="nav-link" style="padding:10px 0;display:block;">Services</a>
+      <a href="#how"        class="nav-link" style="padding:10px 0;display:block;">How It Works</a>
+      <a href="#industries" class="nav-link" style="padding:10px 0;display:block;">Industries</a>
+      <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/karanjatiffanny/30min'});return false;"
+         class="btn" style="margin-top:12px;">Book a Call</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero-bg" id="hero" style="min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;">
+  <div class="container w-full">
+    <div style="max-width:760px;">
+
+      <div class="label" style="margin-bottom:20px;">AI Agents and Business Automation</div>
+
+      <h1 class="h1" style="margin-bottom:24px;">
+        Your business is losing leads, time, and revenue to work that AI can handle
+      </h1>
+
+      <p class="body-lg" style="max-width:640px;margin-bottom:44px;">
+        Clavyra builds AI agents, AI receptionists, and business automation systems for companies worldwide. We handle the calls, the follow-ups, the admin, and the workflows so your team can focus on growth.
+      </p>
+
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;">
+        <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/karanjatiffanny/30min'});return false;"
+           class="btn" style="font-size:1rem;padding:17px 34px;">
+          Get a free automation audit
+        </a>
+        <p style="font-size:.8125rem;color:#555;line-height:1.6;margin:0;">
+          15 minutes. We show you exactly what your business is losing and how to fix it. No obligation.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SOCIAL PROOF BAR
+============================================================ -->
+<div class="proof-bar">
+  <div class="container" style="text-align:center;">
+    <p style="font-size:.9375rem;color:#999;line-height:1.6;margin:0;">
+      <span style="color:var(--green);font-weight:700;">62% of calls to small businesses go unanswered during peak hours.</span>
+      Every missed call is a missed customer. We fix that.
+    </p>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     WHO THIS IS FOR
+============================================================ -->
+<section id="who" class="sec" style="background:#0a0a0a;">
+  <div class="container">
+
+    <div style="margin-bottom:52px;">
+      <div class="label" style="margin-bottom:16px;">Who this is for</div>
+      <h2 class="h2" style="max-width:560px;margin-bottom:16px;">
+        Built for businesses where every lead and every hour counts
+      </h2>
+      <p class="body-lg" style="max-width:620px;">
+        We work with home service companies, medical spas, private clinics, law firms, real estate agencies, recruitment firms, and any service business losing money to missed calls, slow follow-up, or manual processes.
+      </p>
+    </div>
+
+    <div class="cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+      <div class="card" style="padding:28px 28px 32px;">
+        <div class="icon-box" style="margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="#00ff88" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+        </div>
+        <h3 class="h3" style="margin-bottom:10px;">You miss calls while serving customers</h3>
+        <p class="body-md">Leads call once and move on. You lose the job before you even knew about it.</p>
+      </div>
+
+      <div class="card" style="padding:28px 28px 32px;">
+        <div class="icon-box" style="margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="#00ff88" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="h3" style="margin-bottom:10px;">Your team handles work software could do</h3>
+        <p class="body-md">Booking, follow-ups, invoices, onboarding. You are paying people for tasks AI handles instantly.</p>
+      </div>
+
+      <div class="card" style="padding:28px 28px 32px;">
+        <div class="icon-box" style="margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="#00ff88" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          </svg>
+        </div>
+        <h3 class="h3" style="margin-bottom:10px;">You want to grow but operations are maxed</h3>
+        <p class="body-md">You cannot take on more clients without hiring more staff. AI changes that equation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services" class="sec" style="background:#0d0d0d;">
+  <div class="container">
+
+    <div style="margin-bottom:52px;">
+      <div class="label" style="margin-bottom:16px;">Services</div>
+      <h2 class="h2" style="max-width:500px;margin-bottom:16px;">Three ways we build AI into your business</h2>
+      <p class="body-lg" style="max-width:560px;">
+        We start with your biggest bottleneck and grow from there. Most clients begin with one system and expand as they see results.
+      </p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- Service 1 -->
+      <div class="service-card" style="padding:36px;">
+        <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+          <div class="icon-box" style="width:52px;height:52px;border-radius:11px;flex-shrink:0;">
+            <svg width="22" height="22" fill="none" stroke="#00ff88" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </div>
+          <div style="flex:1;min-width:240px;">
+            <h3 style="font-size:1.1875rem;font-weight:700;color:#fff;letter-spacing:-0.015em;margin-bottom:12px;">AI receptionists and conversational agents</h3>
+            <p class="body-md" style="margin-bottom:20px;">
+              We deploy AI agents that handle real conversations across phone, WhatsApp, Instagram DM, SMS, and web chat. Not scripts or buttons. Actual intelligence that qualifies leads, books appointments, answers questions, and escalates to a human only when needed. Your business is available 24/7 without adding a single person to your payroll.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span class="tag">AI receptionist</span>
+              <span class="tag">WhatsApp AI agent</span>
+              <span class="tag">AI appointment scheduling</span>
+              <span class="tag">24/7 lead capture</span>
+              <span class="tag">missed call recovery</span>
+              <span class="tag">conversational AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card" style="padding:36px;">
+        <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+          <div class="icon-box" style="width:52px;height:52px;border-radius:11px;flex-shrink:0;">
+            <svg width="22" height="22" fill="none" stroke="#00ff88" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+          <div style="flex:1;min-width:240px;">
+            <h3 style="font-size:1.1875rem;font-weight:700;color:#fff;letter-spacing:-0.015em;margin-bottom:12px;">Workflow and process automation</h3>
+            <p class="body-md" style="margin-bottom:20px;">
+              We identify the repetitive work costing your team time and revenue and automate it end to end. Lead follow-up sequences, invoice and collections chasing, employee and contractor onboarding, appointment reminders, reputation and review collection, client reporting. If your team does it manually on a schedule, we can automate it.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span class="tag">automated lead follow-up</span>
+              <span class="tag">invoice follow-up automation</span>
+              <span class="tag">onboarding automation</span>
+              <span class="tag">review automation</span>
+              <span class="tag">workflow automation</span>
+              <span class="tag">business process automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card" style="padding:36px;">
+        <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+          <div class="icon-box" style="width:52px;height:52px;border-radius:11px;flex-shrink:0;">
+            <svg width="22" height="22" fill="none" stroke="#00ff88" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div style="flex:1;min-width:240px;">
+            <h3 style="font-size:1.1875rem;font-weight:700;color:#fff;letter-spacing:-0.015em;margin-bottom:12px;">Custom AI agents</h3>
+            <p class="body-md" style="margin-bottom:20px;">
+              For businesses that want AI working across multiple parts of their operation. We build custom AI agents that think, decide, and act autonomously across complex multi-step workflows. From client intake to internal operations, your AI works around the clock, across systems, without a salary.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span class="tag">AI agents for business</span>
+              <span class="tag">autonomous AI workflows</span>
+              <span class="tag">AI for professional services</span>
+              <span class="tag">custom AI systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     HOW IT WORKS
+============================================================ -->
+<section id="how" class="sec" style="background:#0a0a0a;">
+  <div class="container">
+
+    <div style="margin-bottom:52px;">
+      <div class="label" style="margin-bottom:16px;">The process</div>
+      <h2 class="h2" style="margin-bottom:16px;">How we work</h2>
+    </div>
+
+    <!-- Flow diagram -->
+    <div style="margin-bottom:48px;padding:32px 24px;background:#0d0d0d;border:1px solid rgba(255,255,255,.06);border-radius:12px;">
+      <p class="label" style="text-align:center;margin-bottom:24px;">What happens when a lead contacts you</p>
+      <div class="flow-wrap">
+
+        <div class="flow-box">Missed Call<br/>or Message</div>
+
+        <div class="flow-arrow">
+          <svg width="28" height="12" viewBox="0 0 28 12" fill="none" aria-hidden="true">
+            <path d="M0 6h24M18 1l6 5-6 5" stroke="#00ff88" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="flow-box">AI Agent<br/>responds instantly</div>
+
+        <div class="flow-arrow">
+          <svg width="28" height="12" viewBox="0 0 28 12" fill="none" aria-hidden="true">
+            <path d="M0 6h24M18 1l6 5-6 5" stroke="#00ff88" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="flow-box">Lead qualified<br/>and booked</div>
+
+        <div class="flow-arrow">
+          <svg width="28" height="12" viewBox="0 0 28 12" fill="none" aria-hidden="true">
+            <path d="M0 6h24M18 1l6 5-6 5" stroke="#00ff88" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="flow-box">Owner<br/>notified</div>
+
+      </div>
+    </div>
+
+    <!-- 4 steps -->
+    <div class="steps-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+
+      <div class="card" style="padding:28px 28px 32px;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div class="step-num">1</div>
+          <div>
+            <h3 class="h3" style="margin-bottom:10px;">Free audit</h3>
+            <p class="body-md">We analyse your current operations and pinpoint exactly where you are losing leads, wasting hours, or leaving revenue on the table.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:28px 28px 32px;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div class="step-num">2</div>
+          <div>
+            <h3 class="h3" style="margin-bottom:10px;">We build your system</h3>
+            <p class="body-md">Our team designs and deploys your AI receptionist, automation workflows, or custom AI agents. Fully done for you in 2 to 4 weeks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:28px 28px 32px;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div class="step-num">3</div>
+          <div>
+            <h3 class="h3" style="margin-bottom:10px;">Your business runs smarter</h3>
+            <p class="body-md">More leads captured. Faster responses. Less admin. Your team focuses on work that actually grows the business.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:28px 28px 32px;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div class="step-num">4</div>
+          <div>
+            <h3 class="h3" style="margin-bottom:10px;">We grow with you</h3>
+            <p class="body-md">As your business scales we add more automation layers. Most clients start with one system and expand within 60 days.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     RESULTS
+============================================================ -->
+<section id="results" class="sec" style="background:#0d0d0d;">
+  <div class="container">
+
+    <div style="margin-bottom:52px;">
+      <div class="label" style="margin-bottom:16px;">Results</div>
+      <h2 class="h2">What businesses see after working with us</h2>
+    </div>
+
+    <div class="stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;">
+
+      <div class="stat-card">
+        <div style="font-size:clamp(3rem,6vw,4.5rem);font-weight:800;color:var(--green);letter-spacing:-.045em;line-height:1;margin-bottom:14px;">62%</div>
+        <p style="font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.4;">of calls go unanswered at peak hours</p>
+        <p style="font-size:.875rem;color:var(--dim);line-height:1.6;">Our clients answer all of them.</p>
+      </div>
+
+      <div class="stat-card">
+        <div style="font-size:clamp(3rem,6vw,4.5rem);font-weight:800;color:var(--green);letter-spacing:-.045em;line-height:1;margin-bottom:14px;">60s</div>
+        <p style="font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.4;">average response time to every inbound lead</p>
+        <p style="font-size:.875rem;color:var(--dim);line-height:1.6;">Day or night.</p>
+      </div>
+
+      <div class="stat-card">
+        <div style="font-size:clamp(1.875rem,3.5vw,2.75rem);font-weight:800;color:var(--green);letter-spacing:-.03em;line-height:1;margin-bottom:14px;">2 to 4 weeks</div>
+        <p style="font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.4;">from first call to a live system running in your business</p>
+        <p style="font-size:.875rem;color:var(--dim);line-height:1.6;">Not a slide deck.</p>
+      </div>
+
+    </div>
+
+    <p style="font-size:.75rem;color:#2e2e2e;text-align:center;">
+      Based on industry benchmarks for businesses using AI receptionist and automation systems.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOUNDER
+============================================================ -->
+<section id="founder" class="sec" style="background:#0a0a0a;">
+  <div class="container">
+    <div class="founder-wrap">
+
+      <!-- Photo: swap tiffany.jpg into /tiffany.jpg at project root to go live -->
+      <div style="flex-shrink:0;display:flex;justify-content:center;align-items:flex-start;padding:12px;">
+        <div class="founder-photo-ring" id="founder-photo-wrap">
+
+          <!-- Silhouette placeholder (hidden once real photo loads) -->
+          <div id="founder-placeholder"
+               style="position:absolute;inset:0;display:flex;align-items:center;
+                      justify-content:center;background:#141414;border-radius:50%;z-index:1;">
+            <svg width="90" height="90" viewBox="0 0 90 90" fill="none" aria-hidden="true">
+              <circle cx="45" cy="30" r="18" fill="rgba(255,255,255,0.07)"/>
+              <path d="M9 82c0-19.882 16.118-36 36-36s36 16.118 36 36"
+                    fill="rgba(255,255,255,0.05)"/>
+            </svg>
+          </div>
+
+          <!-- Real photo — add tiffany.jpg to project root -->
+          <img src="/tiffany.jpg.png"
+               alt="Tiffany Karanja, Founder and CEO of Clavyra"
+               onerror="this.style.display='none'"
+               onload="var p=document.getElementById('founder-placeholder');if(p)p.style.display='none';"
+               style="z-index:2;" />
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div style="flex:1;min-width:0;">
+        <div class="label" style="margin-bottom:14px;">Who is behind Clavyra</div>
+        <h2 class="h2" style="margin-bottom:4px;">Tiffany Karanja</h2>
+        <p style="font-size:1rem;color:var(--green);font-weight:600;margin-bottom:24px;">Founder and CEO, Clavyra</p>
+        <p class="body-lg" style="margin-bottom:32px;max-width:580px;">
+          I started Clavyra because I kept seeing great businesses lose clients simply because they could not respond fast enough. We build AI agents and automation systems tailored to each business, not generic templates. Every system we deploy is built around your specific operation, your customers, and your goals.
+        </p>
+
+        <div style="display:flex;flex-direction:column;gap:14px;">
+
+          <div class="trust-line">
+            <svg width="16" height="16" fill="none" stroke="#00ff88" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+            <span>AI automation specialist</span>
+          </div>
+
+          <div class="trust-line">
+            <svg width="16" height="16" fill="none" stroke="#00ff88" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/karanjatiffanny/30min'});return false;"
+               style="color:var(--green);font-weight:600;text-decoration:none;transition:opacity .15s;"
+               onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
+              Book a free 30-minute audit
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     INDUSTRIES
+============================================================ -->
+<section id="industries" class="sec" style="background:#0d0d0d;">
+  <div class="container">
+
+    <div style="margin-bottom:44px;">
+      <div class="label" style="margin-bottom:16px;">Industries</div>
+      <h2 class="h2" style="max-width:520px;margin-bottom:16px;">Industries we work with</h2>
+      <p class="body-lg" style="max-width:580px;">
+        If your business relies on leads, appointments, or customer communication, we can help. We work with clients across the US, UK, and globally.
+      </p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <span class="pill">Home services</span>
+      <span class="pill">Medical spas</span>
+      <span class="pill">Private clinics</span>
+      <span class="pill">Law firms</span>
+      <span class="pill">Commercial real estate</span>
+      <span class="pill">Recruitment agencies</span>
+      <span class="pill">Coaches and consultants</span>
+      <span class="pill">Financial advisors</span>
+      <span class="pill">Any service business</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section id="faq" class="sec" style="background:#0a0a0a;">
+  <div class="container" style="max-width:720px;">
+
+    <div style="margin-bottom:52px;">
+      <div class="label" style="margin-bottom:16px;">Common questions</div>
+      <h2 class="h2">Answers to the things you are probably thinking</h2>
+    </div>
+
+    <div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" data-target="faq0">
+          <span>"Is this just a chatbot?"</span>
+          <div class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/>
+            </svg>
+          </div>
+        </button>
+        <div class="faq-body" id="faq0">
+          <p class="body-md" style="padding-bottom:22px;">No. Our AI agents handle real back-and-forth conversations, take actions inside your systems, qualify leads, book appointments, and escalate intelligently. Far beyond a scripted chatbot.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" data-target="faq1">
+          <span>"We already have staff who handle this"</span>
+          <div class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/>
+            </svg>
+          </div>
+        </button>
+        <div class="faq-body" id="faq1">
+          <p class="body-md" style="padding-bottom:22px;">We do not replace your team. We cover the volume they cannot handle, after hours, during peak times, across multiple channels simultaneously.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" data-target="faq2">
+          <span>"How do I know it will work for my business?"</span>
+          <div class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/>
+            </svg>
+          </div>
+        </button>
+        <div class="faq-body" id="faq2">
+          <p class="body-md" style="padding-bottom:22px;">The free audit exists for exactly this reason. We map your specific gaps and show you projected ROI before you spend anything.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" data-target="faq3">
+          <span>"We are not a tech company"</span>
+          <div class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/>
+            </svg>
+          </div>
+        </button>
+        <div class="faq-body" id="faq3">
+          <p class="body-md" style="padding-bottom:22px;">You do not need to be. We handle the entire build, setup, and ongoing management. You just start seeing results.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="border-bottom:none;">
+        <button class="faq-q" aria-expanded="false" data-target="faq4">
+          <span>"We are a small business, is this for us?"</span>
+          <div class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/>
+            </svg>
+          </div>
+        </button>
+        <div class="faq-body" id="faq4">
+          <p class="body-md" style="padding-bottom:22px;">AI automation creates the biggest impact for small and mid-size businesses because every lead and every hour matters more. That is exactly who we build for.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section id="cta" class="cta-bg sec">
+  <div class="container" style="text-align:center;">
+
+    <div class="label" style="margin-bottom:20px;">Get started</div>
+    <h2 class="h2" style="max-width:680px;margin:0 auto 20px;">
+      Ready to stop losing leads to missed calls and slow follow-up?
+    </h2>
+    <p class="body-lg" style="max-width:520px;margin:0 auto 44px;">
+      Book a free 15-minute audit. We will map out exactly where your business is losing revenue and show you how AI agents and automation fix it. No obligation, no jargon.
+    </p>
+    <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/karanjatiffanny/30min'});return false;"
+       class="btn" style="font-size:1.0625rem;padding:18px 38px;">
+      Book my free audit
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER  (3-column)
+============================================================ -->
+<footer style="background:#060606;border-top:1px solid rgba(255,255,255,.05);">
+  <div class="container" style="padding-top:72px;padding-bottom:72px;">
+
+    <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:48px;margin-bottom:56px;">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <div style="font-size:1.5rem;font-weight:800;letter-spacing:-.035em;margin-bottom:16px;">
+          <span style="color:#fff;">Clav</span><span style="color:var(--green);">yra</span>
+        </div>
+        <p style="font-size:.9375rem;color:#444;line-height:1.75;max-width:320px;">
+          AI agents, AI receptionists, and business automation systems for companies serious about growth. Serving clients globally.
+        </p>
+      </div>
+
+      <!-- Col 2: Quick links -->
+      <div>
+        <p style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#333;margin-bottom:20px;">Quick links</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="#services"   class="nav-link" style="font-size:.9375rem;">Services</a>
+          <a href="#how"        class="nav-link" style="font-size:.9375rem;">How It Works</a>
+          <a href="#industries" class="nav-link" style="font-size:.9375rem;">Industries</a>
+          <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/karanjatiffanny/30min'});return false;"
+             style="font-size:.9375rem;color:var(--green);font-weight:600;text-decoration:none;transition:opacity .15s;"
+             onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
+            Book a Call
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div>
+        <p style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#333;margin-bottom:20px;">Contact</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;">
+          <a href="mailto:karanjatiffanny@gmail.com"
+             style="font-size:.9375rem;color:#888;text-decoration:none;transition:color .15s;"
+             onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">
+            karanjatiffanny@gmail.com
+          </a>
+          <a href="tel:+254769025156"
+             style="font-size:.9375rem;color:#888;text-decoration:none;transition:color .15s;"
+             onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">
+            +254 769 025 156
+          </a>
+        </div>
+        <a href="https://wa.me/254769025156" target="_blank" rel="noopener" class="wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,.05);padding-top:24px;text-align:center;">
+      <p style="font-size:.75rem;color:#222;">&copy; 2026 Clavyra AI. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     SCROLL TO TOP
+============================================================ -->
+<button id="scroll-top" aria-label="Back to top">
+  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  // ── Desktop nav visibility ─────────────────────────────
+  const deskNav = document.getElementById('desk-nav');
+  if (deskNav) {
+    const mq = window.matchMedia('(min-width: 768px)');
+    function syncNav(e) { deskNav.style.display = e.matches ? 'flex' : 'none'; deskNav.style.alignItems = 'center'; deskNav.style.gap = '28px'; }
+    mq.addEventListener('change', syncNav);
+    syncNav(mq);
+  }
+
+  // ── Mobile menu ────────────────────────────────────────
+  const hamBtn  = document.getElementById('ham-btn');
+  const mobMenu = document.getElementById('mob-menu');
+  const hb1 = document.getElementById('hb1');
+  const hb2 = document.getElementById('hb2');
+  const hb3 = document.getElementById('hb3');
+  let mobOpen = false;
+
+  function toggleMob(state) {
+    mobOpen = state;
+    hamBtn.setAttribute('aria-expanded', String(state));
+    mobMenu.classList.toggle('open', state);
+    hb1.style.transform = state ? 'translateY(6.5px) rotate(45deg)' : '';
+    hb2.style.opacity   = state ? '0' : '';
+    hb3.style.transform = state ? 'translateY(-6.5px) rotate(-45deg)' : '';
+  }
+
+  hamBtn.addEventListener('click', () => toggleMob(!mobOpen));
+  mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMob(false)));
+
+  // ── FAQ accordion ──────────────────────────────────────
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id   = btn.dataset.target;
+      const body = document.getElementById(id);
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-q').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+      if (!open) { btn.setAttribute('aria-expanded', 'true'); body.classList.add('open'); }
+    });
+  });
+
+  // ── Header opacity on scroll ───────────────────────────
+  const hdr = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    hdr.style.background = window.scrollY > 50
+      ? 'rgba(8,8,8,0.98)'
+      : 'rgba(10,10,10,0.92)';
+  }, { passive: true });
+
+  // ── Scroll to top ──────────────────────────────────────
+  const scrollTopBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('show', window.scrollY > 500);
+  }, { passive: true });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>

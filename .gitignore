@@ -1,0 +1,4 @@
+node_modules/
+temporary screenshots/
+_crop_tmp.mjs
+*.log
