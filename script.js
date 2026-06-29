@@ -110,6 +110,19 @@ if (contactForm) {
   });
 }
 
+// ── Missed call revenue calculator ─────────────────────
+const calcBtn = document.getElementById('calc-btn');
+if (calcBtn) {
+  calcBtn.addEventListener('click', () => {
+    const calls  = parseFloat(document.getElementById('calc-calls').value) || 0;
+    const value  = parseFloat(document.getElementById('calc-value').value) || 0;
+    const rate   = parseFloat(document.getElementById('calc-rate').value) || 0;
+    const lost   = calls * value * (rate / 100);
+    document.getElementById('calc-output').textContent = '$' + Math.round(lost).toLocaleString();
+    document.getElementById('calc-result').style.display = 'block';
+  });
+}
+
 // ── Email capture (blog) ───────────────────────────────
 const emailForm = document.getElementById('email-capture-form');
 if (emailForm) {
