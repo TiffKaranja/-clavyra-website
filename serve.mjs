@@ -24,9 +24,16 @@ const mime = {
   '.json': 'application/json',
 };
 
+async function resolveFile(url) {
+  if (url === '/') return join(__dirname, 'index.html');
+  const direct = join(__dirname, url);
+  if (extname(direct)) return direct;
+  return join(__dirname, `${url}.html`); // clean URLs: /about -> about.html
+}
+
 createServer(async (req, res) => {
-  const url      = req.url.split('?')[0];
-  const filePath = join(__dirname, url === '/' ? 'index.html' : url);
+  const url      = decodeURIComponent(req.url.split('?')[0]);
+  const filePath = await resolveFile(url);
   const ext      = extname(filePath).toLowerCase();
 
   try {
