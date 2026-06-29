@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clavyra.vercel.app/sitemap.xml
+Sitemap: https://clavyra-website.vercel.app/sitemap.xml

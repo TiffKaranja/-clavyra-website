@@ -75,8 +75,8 @@ const hdr = document.getElementById('site-header');
 if (hdr) {
   window.addEventListener('scroll', () => {
     hdr.style.background = window.scrollY > 50
-      ? 'rgba(8,8,8,0.98)'
-      : 'rgba(10,10,10,0.92)';
+      ? 'rgba(255,255,255,0.98)'
+      : 'rgba(255,255,255,0.92)';
   }, { passive: true });
 }
 
