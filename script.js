@@ -98,15 +98,38 @@ if (scrollTopBtn) {
   });
 })();
 
-// ── Contact form (no backend yet — friendly confirmation) ─
+// ── Contact form (Web3Forms) ───────────────────────────
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Message sent';
+    btn.textContent = 'Sending...';
     btn.disabled = true;
-    contactForm.reset();
+
+    const data = new FormData(contactForm);
+    const json = Object.fromEntries(data.entries());
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(json)
+      });
+      const result = await res.json();
+      if (result.success) {
+        btn.textContent = 'Message sent';
+        contactForm.reset();
+      } else {
+        btn.textContent = 'Send message';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us directly at tiffany@clavyra.co');
+      }
+    } catch {
+      btn.textContent = 'Send message';
+      btn.disabled = false;
+      alert('Something went wrong. Please email us directly at tiffany@clavyra.co');
+    }
   });
 }
 
