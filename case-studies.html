@@ -68,6 +68,15 @@
     }
   }
   </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -340,12 +349,12 @@
 
     </div>
 
-    <div style="border-top:1px solid rgba(255,255,255,.05);padding-top:24px;display:flex;flex-direction:column;gap:12px;align-items:center;">
-      <div style="display:flex;gap:24px;">
-        <a href="/privacy" style="font-size:.75rem;color:#555;text-decoration:none;">Privacy Policy</a>
-        <a href="/terms" style="font-size:.75rem;color:#555;text-decoration:none;">Terms of Service</a>
+    <div style="border-top:1px solid rgba(255,255,255,.05);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:.75rem;color:#444;margin:0;">&copy; 2026 Clavyra. All rights reserved. Built with care for businesses serious about growth.</p>
+      <div style="display:flex;gap:20px;">
+        <a href="/privacy" style="font-size:.75rem;color:#666;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='#aaa'" onmouseout="this.style.color='#666'">Privacy Policy</a>
+        <a href="/terms" style="font-size:.75rem;color:#666;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='#aaa'" onmouseout="this.style.color='#666'">Terms of Service</a>
       </div>
-      <p style="font-size:.75rem;color:#222;">&copy; 2026 Clavyra AI. All rights reserved.</p>
     </div>
 
   </div>
@@ -359,5 +368,15 @@
 
 <script src="/script.js"></script>
 
+
+<!-- ── Cookie consent ── -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0a0a0a;border-top:1px solid rgba(255,255,255,.1);padding:14px 24px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;display:none;">
+  <p style="margin:0;font-size:.875rem;color:#aaa;line-height:1.6;">We use cookies to improve your experience on our site.</p>
+  <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+    <a href="/privacy" style="font-size:.8125rem;font-weight:600;color:#666;text-decoration:none;padding:8px 16px;border:1px solid rgba(255,255,255,.12);border-radius:6px;white-space:nowrap;transition:color .15s;" onmouseover="this.style.color='#aaa'" onmouseout="this.style.color='#666'">Learn more</a>
+    <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookieOk','1')" style="padding:9px 20px;background:#00ff88;color:#0a0a0a;border:none;border-radius:6px;font-size:.8125rem;font-weight:700;cursor:pointer;font-family:'Inter',system-ui,sans-serif;white-space:nowrap;">Accept</button>
+  </div>
+</div>
+<script>if(!localStorage.getItem('cookieOk')){document.getElementById('cookie-banner').style.display='flex';}</script>
 </body>
 </html>
