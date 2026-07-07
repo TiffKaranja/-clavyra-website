@@ -468,15 +468,25 @@ body {
 ::-webkit-scrollbar-track { background: #f0f0f0; }
 ::-webkit-scrollbar-thumb { background: #cccccc; border-radius: 4px; }
 
+/* ─── Base image safety ─────────────────────────── */
+img { max-width: 100%; height: auto; display: block; }
+
 /* ─── Mobile responsive ─────────────────────────── */
 @media (max-width: 767px) {
+  html, body { overflow-x: hidden; }
   .sec { padding: 72px 0; }
   .container { padding: 0 20px; }
   .page-hero { padding: 136px 0 56px; }
 
-  /* Buttons full width */
-  .btn, .btn-outline { display: block; width: 100%; text-align: center; }
-  .btn-sm { width: auto; display: inline-block; }
+  /* Minimum touch targets */
+  .btn, .btn-outline { display: block; width: 100%; text-align: center; min-height: 48px; padding: 14px 24px; }
+  .btn-sm { width: auto; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; }
+
+  /* Form fields full width on mobile */
+  .form-field input,
+  .form-field select,
+  .form-field textarea { width: 100%; box-sizing: border-box; font-size: 16px; }
+  .form-field select { min-height: 48px; }
 
   /* Product preview mockups stack and shrink */
   .preview-wrap { flex-direction: column; align-items: center; }
@@ -490,7 +500,9 @@ body {
   .contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   .roi-list { grid-template-columns: 1fr !important; }
   .cs-preview { padding: 28px; gap: 28px; }
-  .compare-table th, .compare-table td { padding: 12px 10px; font-size: .8125rem; }
+  .compare-table { font-size: .8125rem; }
+  .compare-table th, .compare-table td { padding: 12px 8px; font-size: .8125rem; }
+  .compare-table th:first-child, .compare-table td:first-child { min-width: 80px; }
 
   /* Founder stacks */
   .founder-wrap { flex-direction: column; align-items: center; gap: 36px; }
@@ -504,14 +516,25 @@ body {
   /* Footer stacks */
   .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
 
+  /* Hero section text padding */
+  #hero { padding-top: 100px !important; padding-bottom: 60px !important; }
+
   /* Nav btn stays compact in desktop (hidden on mobile anyway) */
   .nav-btn-wrap .btn { width: auto; display: inline-block; }
 
   /* Mobile menu btn full width */
   #mob-menu .btn { display: block; width: 100%; text-align: center; }
+
+  /* Pricing card full width CTA */
+  .pricing-card .btn, .pricing-card .btn-outline { width: 100%; text-align: center; }
+
+  /* Testimonials stack */
+  .testimonial-card { padding: 28px 24px; }
 }
 
 @media (max-width: 480px) {
   .h1 { font-size: 2rem; }
   .h2 { font-size: 1.625rem; }
+  .body-lg { font-size: 1rem; }
+  .compare-table { display: block; overflow-x: auto; }
 }

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clavyra.co/sitemap.xml
+Sitemap: https://www.clavyra.co/sitemap.xml
