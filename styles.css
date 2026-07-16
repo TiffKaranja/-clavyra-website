@@ -647,3 +647,40 @@ img { max-width: 100%; height: auto; display: block; }
 .sec-light .tool-badge,.sec-light-alt .tool-badge { background: #ffffff !important; border-color: rgba(0,0,0,0.08) !important; color: #555; }
 .sec-light .pill,.sec-light-alt .pill { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); color: #555; }
 .sec-light .pill:hover,.sec-light-alt .pill:hover { color: #009952; background: rgba(0,160,90,0.06); border-color: rgba(0,160,90,0.3); }
+
+/* Form fields in light sections */
+.sec-light .form-field input,
+.sec-light .form-field select,
+.sec-light .form-field textarea,
+.sec-light-alt .form-field input,
+.sec-light-alt .form-field select,
+.sec-light-alt .form-field textarea {
+  background: #eef0f4 !important;
+  color: #0d0d0d !important;
+  border-color: rgba(0,0,0,0.1) !important;
+  color-scheme: light;
+}
+.sec-light .form-field select,.sec-light-alt .form-field select { color-scheme: light; }
+.sec-light .form-field input::placeholder,.sec-light .form-field textarea::placeholder,
+.sec-light-alt .form-field input::placeholder,.sec-light-alt .form-field textarea::placeholder { color: #9ca3af; }
+.sec-light .form-field input:focus,.sec-light .form-field select:focus,.sec-light .form-field textarea:focus,
+.sec-light-alt .form-field input:focus,.sec-light-alt .form-field select:focus,.sec-light-alt .form-field textarea:focus { border-color: rgba(0,153,86,0.5) !important; }
+
+/* Strong inline white in light sections */
+.sec-light strong[style*="color:#ffffff"],.sec-light-alt strong[style*="color:#ffffff"] { color: #0d0d0d !important; }
+
+/* Two-column layout for service sections */
+.svc-row { display:flex; gap:48px; align-items:flex-start; flex-wrap:wrap; }
+.svc-left { flex:1; min-width:300px; }
+.svc-right { flex:0 0 340px; max-width:340px; }
+@media(max-width:900px) { .svc-right { flex:unset; max-width:100%; width:100%; } }
+
+/* Two-column page-hero (about page) */
+.hero-page-cols { display:flex; gap:56px; align-items:center; }
+.hero-page-text { flex:0 0 55%; max-width:55%; }
+.hero-page-img { flex:0 0 45%; max-width:45%; display:flex; justify-content:flex-end; align-items:center; }
+@media(max-width:900px) {
+  .hero-page-cols { flex-direction:column; }
+  .hero-page-text { flex:unset; max-width:100%; }
+  .hero-page-img { display:none; }
+}
