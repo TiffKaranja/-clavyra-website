@@ -683,4 +683,5 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-page-cols { flex-direction:column; }
   .hero-page-text { flex:unset; max-width:100%; }
   .hero-page-img { display:none; }
+  .mv-grid { grid-template-columns:1fr !important; }
 }
