@@ -562,3 +562,88 @@ img { max-width: 100%; height: auto; display: block; }
   .body-lg { font-size: 1rem; }
   .compare-table { display: block; overflow-x: auto; }
 }
+
+/* ─── Light section theme (dark hero / light body / dark CTA) ── */
+.sec-light {
+  background: #f5f7fa !important;
+  --card:   #ffffff;
+  --alt:    #eef0f4;
+  --border: rgba(0,0,0,0.08);
+  --text:   #0d0d0d;
+  --muted:  #6b7280;
+  --dim:    #9ca3af;
+}
+.sec-light-alt {
+  background: #ffffff !important;
+  --card:   #f5f7fa;
+  --alt:    #eef0f4;
+  --border: rgba(0,0,0,0.07);
+  --text:   #0d0d0d;
+  --muted:  #6b7280;
+  --dim:    #9ca3af;
+}
+
+/* Typography */
+.sec-light .h1,.sec-light .h2,.sec-light .h3,
+.sec-light-alt .h1,.sec-light-alt .h2,.sec-light-alt .h3 { color: #0d0d0d; }
+.sec-light .label,.sec-light-alt .label { color: #009952; }
+.sec-light .faq-q,.sec-light-alt .faq-q { color: #0d0d0d; }
+.sec-light .pricing-price,.sec-light-alt .pricing-price { color: #0d0d0d; }
+.sec-light .cs-preview-step,.sec-light-alt .cs-preview-step { color: #0d0d0d; }
+
+/* Cards — !important beats inline style="background:#111111" */
+.sec-light .card,.sec-light .stat-card,.sec-light .testimonial-card,
+.sec-light .pricing-card,.sec-light .cs-card,.sec-light .blog-card,
+.sec-light .service-card,.sec-light .contact-option {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.08) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.sec-light-alt .card,.sec-light-alt .stat-card,.sec-light-alt .testimonial-card,
+.sec-light-alt .pricing-card,.sec-light-alt .cs-card,.sec-light-alt .blog-card,
+.sec-light-alt .service-card,.sec-light-alt .contact-option {
+  background: #f5f7fa !important;
+  border-color: rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.sec-light .card:hover,.sec-light .stat-card:hover,
+.sec-light .testimonial-card:hover,.sec-light .pricing-card:hover,
+.sec-light-alt .card:hover,.sec-light-alt .stat-card:hover,
+.sec-light-alt .testimonial-card:hover,.sec-light-alt .pricing-card:hover {
+  box-shadow: 0 10px 40px rgba(0,0,0,0.10) !important;
+  border-color: rgba(0,153,86,0.3) !important;
+}
+
+/* Force hardcoded-white inline text to dark in light sections */
+.sec-light p[style*="color:#ffffff"],.sec-light p[style*="color: #ffffff"],
+.sec-light p[style*="color:#fff"],.sec-light div[style*="color:#ffffff"],
+.sec-light div[style*="color: #ffffff"],.sec-light span[style*="color:#ffffff"],
+.sec-light h2[style*="color:#ffffff"],
+.sec-light-alt p[style*="color:#ffffff"],.sec-light-alt p[style*="color: #ffffff"],
+.sec-light-alt p[style*="color:#fff"],.sec-light-alt div[style*="color:#ffffff"],
+.sec-light-alt div[style*="color: #ffffff"],.sec-light-alt span[style*="color:#ffffff"],
+.sec-light-alt h2[style*="color:#ffffff"] { color: #0d0d0d !important; }
+
+/* Stat numbers stay green */
+.sec-light .stat-num,.sec-light-alt .stat-num { color: var(--green) !important; }
+
+/* FAQ */
+.sec-light .faq-item,.sec-light-alt .faq-item { border-color: rgba(0,0,0,0.08); }
+.sec-light .faq-icon,.sec-light-alt .faq-icon { background: rgba(0,0,0,0.06) !important; }
+.sec-light .faq-q[aria-expanded="true"],.sec-light-alt .faq-q[aria-expanded="true"] { color: #009952 !important; }
+
+/* Service details */
+.sec-light .service-detail,.sec-light-alt .service-detail { border-color: rgba(0,0,0,0.08) !important; }
+
+/* Comparison table */
+.sec-light .compare-table,.sec-light-alt .compare-table { border-color: rgba(0,0,0,0.08); }
+.sec-light .compare-table th,.sec-light-alt .compare-table th { background: rgba(0,0,0,0.03) !important; color: #6b7280 !important; border-color: rgba(0,0,0,0.08) !important; }
+.sec-light .compare-table td,.sec-light-alt .compare-table td { border-color: rgba(0,0,0,0.08) !important; }
+.sec-light .compare-table td:first-child,.sec-light-alt .compare-table td:first-child { color: #0d0d0d !important; }
+.sec-light .col-clavyra,.sec-light-alt .col-clavyra { background: rgba(0,160,90,0.08) !important; color: #0d0d0d !important; }
+.sec-light .compare-table th.col-clavyra,.sec-light-alt .compare-table th.col-clavyra { background: rgba(0,160,90,0.12) !important; color: #0d0d0d !important; }
+
+/* Tool badges, pills */
+.sec-light .tool-badge,.sec-light-alt .tool-badge { background: #ffffff !important; border-color: rgba(0,0,0,0.08) !important; color: #555; }
+.sec-light .pill,.sec-light-alt .pill { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); color: #555; }
+.sec-light .pill:hover,.sec-light-alt .pill:hover { color: #009952; background: rgba(0,160,90,0.06); border-color: rgba(0,160,90,0.3); }
