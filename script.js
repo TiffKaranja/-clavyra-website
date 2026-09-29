@@ -70,16 +70,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// ── Header opacity on scroll ───────────────────────────
-const hdr = document.getElementById('site-header');
-if (hdr) {
-  window.addEventListener('scroll', () => {
-    hdr.style.background = window.scrollY > 50
-      ? 'rgba(255,255,255,0.98)'
-      : 'rgba(255,255,255,0.92)';
-  }, { passive: true });
-}
-
 // ── Scroll to top ──────────────────────────────────────
 const scrollTopBtn = document.getElementById('scroll-top');
 if (scrollTopBtn) {
