@@ -317,7 +317,7 @@ body {
 
 /* ─── Page hero (subpages) ──────────────────────── */
 .page-hero {
-  padding: 156px 0 72px;
+  padding: 156px 0 40px;
   background:
     radial-gradient(ellipse 90% 55% at 50% -5%, rgba(0,153,82,.08) 0%, transparent 65%),
     #FAFAF7;
@@ -414,7 +414,7 @@ body {
   background: #075E54; color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 10px;
   font-size: .8125rem; font-weight: 700;
 }
-.phone-mock-header .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.phone-mock-header .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); flex-shrink: 0; animation: dot-pulse 1.8s ease-out infinite; }
 .phone-mock-body { padding: 14px 12px; display: flex; flex-direction: column; gap: 8px; min-height: 320px; }
 .phone-bubble {
   max-width: 78%; padding: 8px 12px; border-radius: 8px; font-size: .8125rem; line-height: 1.45;
@@ -441,7 +441,7 @@ body {
 }
 .dash-row.new { background: rgba(0,255,136,.08); border-color: rgba(0,255,136,.3); font-weight: 700; color: #ffffff; }
 .dash-row .dot { width: 7px; height: 7px; border-radius: 50%; background: #444; flex-shrink: 0; }
-.dash-row.new .dot { background: var(--green); }
+.dash-row.new .dot { background: var(--green); animation: dot-pulse 1.8s ease-out infinite; }
 .dash-mock-foot { padding: 14px 18px; border-top: 1px solid rgba(255,255,255,.06); font-size: .75rem; color: var(--muted); }
 
 /* ─── Article body (blog posts) ──────────────────── */
@@ -502,12 +502,18 @@ img { max-width: 100%; height: auto; display: block; }
   50%       { transform: rotate(2deg) translateY(-14px); }
 }
 
+@keyframes dot-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0,255,136,.55); }
+  70%  { box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,255,136,0); }
+}
+
 /* ─── Mobile responsive ─────────────────────────── */
 @media (max-width: 767px) {
   body { overflow-x: hidden; }
   .sec { padding: 48px 0; }
   .container { padding: 0 20px; }
-  .page-hero { padding: 136px 0 56px; }
+  .page-hero { padding: 136px 0 32px; }
 
   /* Minimum touch targets */
   .btn, .btn-outline { display: block; width: 100%; text-align: center; min-height: 48px; padding: 14px 24px; }
