@@ -123,7 +123,7 @@ if (contactForm) {
   });
 }
 
-// ── Missed call revenue calculator ─────────────────────
+// ── Missed enquiry revenue calculator ─────────────────────
 const calcBtn = document.getElementById('calc-btn');
 if (calcBtn) {
   calcBtn.addEventListener('click', () => {
@@ -131,7 +131,7 @@ if (calcBtn) {
     const value  = parseFloat(document.getElementById('calc-value').value) || 0;
     const rate   = parseFloat(document.getElementById('calc-rate').value) || 0;
     const lost   = calls * value * (rate / 100);
-    document.getElementById('calc-output').textContent = '$' + Math.round(lost).toLocaleString();
+    document.getElementById('calc-output').textContent = 'KES ' + Math.round(lost).toLocaleString('en-US');
     document.getElementById('calc-result').style.display = 'block';
   });
 }
@@ -146,3 +146,25 @@ if (emailForm) {
     btn.disabled = true;
   });
 }
+
+// ── Hero dashboard mockup: keep the calendar on the current month ─────
+(() => {
+  const grid = document.querySelector('[data-hd-dates]');
+  const label = document.querySelector('[data-hd-month]');
+  if (!grid || !label) return;
+  const now = new Date();
+  const y = now.getFullYear(), m = now.getMonth(), today = now.getDate();
+  label.textContent = now.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+  const first = new Date(y, m, 1).getDay();
+  const days = new Date(y, m + 1, 0).getDate();
+  const prevDays = new Date(y, m, 0).getDate();
+  const total = Math.ceil((first + days) / 7) * 7;
+  let html = '';
+  for (let i = 0; i < total; i++) {
+    const d = i - first + 1;
+    if (d < 1) html += `<span class="muted">${prevDays + d}</span>`;
+    else if (d > days) html += `<span class="muted">${d - days}</span>`;
+    else html += `<span${d === today ? ' class="today"' : ''}>${d}</span>`;
+  }
+  grid.innerHTML = html;
+})();
