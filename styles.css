@@ -126,6 +126,18 @@ body {
   transition: background .15s, color .15s;
 }
 .nav-drop-menu a:hover { background: rgba(0,255,136,.07); color: var(--green); }
+.nav-drop-menu.open { display: grid; }
+.nav-drop-menu { grid-template-columns: 1fr 1fr; gap: 4px 12px; min-width: 520px; padding: 12px; display: grid; }
+.nav-drop-head {
+  padding: 6px 12px 8px; font-size: .6875rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--green);
+}
+.nav-drop-col + .nav-drop-col { border-left: 1px solid rgba(255,255,255,.08); padding-left: 12px; }
+.nav-drop-menu a { padding: 8px 12px; }
+.mob-sub-head {
+  font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--green); margin-top: 8px;
+}
 
 /* Mobile sub-list under Services in mobile menu */
 .mob-sublist { display: flex; flex-direction: column; gap: 2px; padding-left: 16px; margin: 4px 0 8px; }
