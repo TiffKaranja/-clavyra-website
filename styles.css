@@ -765,3 +765,6 @@ img { max-width: 100%; height: auto; display: block; }
 .hd-urow em { font-style:normal; font-size:.4em; background:#e8f6ef; color:#0b7a53; padding:.3em .8em; border-radius:1em; }
 @media (max-width: 768px) { .hd { transform:none; animation:none; } }
 @media (prefers-reduced-motion: reduce) { .hd { animation:none; } }
+
+/* Anchor targets clear the fixed header */
+[id] { scroll-margin-top: 84px; }

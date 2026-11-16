@@ -1,0 +1,31 @@
+# Clavyra
+
+> Clavyra is an AI and workflow automation agency based in Nairobi, Kenya, serving clients in Kenya and worldwide (remote). It builds "Digital Workers": narrow, end-to-end automated workflows wired directly into a client's CRM, calendar, messaging channels, payments, and accounting tools. It also builds fast, conversion-focused websites and landing pages connected to those workflows.
+
+Founder: Tiffany Karanja. Contact: tiffany@clavyra.co, +254 769 025 156 (WhatsApp). Prices are in Kenyan shillings (KES) and include VAT.
+
+## Core services
+
+- [Speed-to-Lead & Database Reactivation](https://www.clavyra.co/services#speed-to-lead): Captures ad and website leads in under 60 seconds via WhatsApp (Kenya) or SMS and CRM webhooks (international), qualifies them, books calendar meetings, and re-engages old CRM lists. Pricing: From KES 25,000 setup + KES 3,000/month, including VAT.
+- [Supervised Support & Inbox Triage](https://www.clavyra.co/services#support-triage): Connects to Gmail, Zendesk, Freshdesk, or WhatsApp, checks live status in a knowledge base or database, answers routine questions, and stages complex replies for 1-click human approval. Pricing: Custom quote after your audit.
+- [Document-to-Ledger Reconciliation](https://www.clavyra.co/services#document-ledger): Extracts line items from supplier PDFs, receipts, and delivery notes, validates them against purchase orders, and syncs clean entries to QuickBooks, Xero, or ERPs. Pricing: Custom quote after your audit.
+- [Websites & Conversion Systems](https://www.clavyra.co/services#websites): Fast, conversion-focused websites and landing pages integrated with booking calendars, M-Pesa or Stripe payments, CRM, and automated follow-up. Pricing: From KES 50,000, including VAT.
+
+## Target markets
+
+- Kenya: WhatsApp-first lead response on Meta's official WhatsApp Business Platform, M-Pesa payments, QuickBooks and Xero reconciliation. Based in Nairobi.
+- International: remote delivery using SMS, CRM webhooks, Gmail, Zendesk, Freshdesk, Stripe, QuickBooks, Xero, and ERPs.
+
+## Key pages
+
+- [Services and pricing](https://www.clavyra.co/services)
+- [Book a free Business Systems & Website Audit](https://www.clavyra.co/contact): a 30-minute call that finds where leads or documents get stuck between first enquiry and payment
+- [WhatsApp booking agent for lodges and hotels in Kenya](https://www.clavyra.co/hospitality)
+- [Business automation in Kenya](https://www.clavyra.co/kenya)
+- [Our work and case studies](https://www.clavyra.co/case-studies)
+- [About Clavyra](https://www.clavyra.co/about)
+- [Blog](https://www.clavyra.co/blog)
+
+## Other systems Clavyra builds
+
+POS systems, school management systems, custom software, data and analytics dashboards, custom AI agents, workflow automation (Zapier, Make, n8n), and consulting and training.
